@@ -1,8 +1,9 @@
 class Carnival
-  attr_reader :name, :rides
+  attr_reader :name, :rides, :attendees
   def initialize(name)
     @name = name
     @rides = []
+    @attendees = []
   end
 
   def add_ride(ride)
@@ -13,5 +14,9 @@ class Carnival
     @rides.select do |ride|
       attendee.interests.include?(ride.name)
     end
+  end
+
+  def admit(attendee)
+    @attendees << attendee
   end
 end

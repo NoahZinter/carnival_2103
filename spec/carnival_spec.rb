@@ -54,7 +54,7 @@ describe Carnival do
   end
 
   describe '#admit' do
-   xit 'adds attendees to new @attendees instance var' do
+    it 'adds attendees to new @attendees instance var' do
       jeffco_fair = Carnival.new("Jefferson County Fair")
       ferris_wheel = Ride.new({name: 'Ferris Wheel', cost: 0})
       bumper_cars = Ride.new({name: 'Bumper Cars', cost: 10})
@@ -69,6 +69,12 @@ describe Carnival do
       bob.add_interest('Ferris Wheel')
       bob.add_interest('Bumper Cars')
       sally.add_interest('Scrambler')
+
+      jeffco_fair.admit(bob)
+      jeffco_fair.admit(sally)
+      jeffco_fair.admit(johnny)
+
+      expect(jeffco_fair.attendees).to eq([bob, sally, johnny])
     end
   end
 end
