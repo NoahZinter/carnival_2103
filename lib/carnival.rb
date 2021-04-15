@@ -19,4 +19,12 @@ class Carnival
   def admit(attendee)
     @attendees << attendee
   end
+
+  def attendees_by_ride_interest
+    @rides.reduce({}) do |hash, ride| 
+      hash.update(ride => @attendees.select do |attendee| 
+        recommend_rides(attendee).include?(ride)
+      end)
+    end
+  end
 end
