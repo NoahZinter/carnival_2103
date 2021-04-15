@@ -5,4 +5,6 @@ class Attendee
     @spending_money = spending_money
     @interests = []
   end
+
+  
 end
