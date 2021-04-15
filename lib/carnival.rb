@@ -27,4 +27,17 @@ class Carnival
       end)
     end
   end
+
+
+
+  def ticket_lottery_contestants
+    contesants = []
+    potential_contestants = attendees_by_ride_interest
+    potential_contestants.select do |rides, attendees|
+      if rides.cost > attendees
+    
+    require 'pry'; binding.pry
+  end
+
+
 end

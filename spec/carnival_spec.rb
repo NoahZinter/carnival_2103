@@ -129,7 +129,10 @@ describe Carnival do
       jeffco_fair.admit(bob)
       jeffco_fair.admit(sally)
       jeffco_fair.admit(johnny)
+      jeffco_fair.ticket_lottery_contestants
 
+
+      
       expect(jeffco_fair.ticket_lottery_contestants(bumper_cars)).to eq([bob, johnny])
     end
   end
